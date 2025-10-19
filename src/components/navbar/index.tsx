@@ -5,7 +5,8 @@ import { theme } from '../../pallet';
 function MyNavbar() {
     return (
         <Navbar expand="sm" className="mb-3" style={{
-            backgroundColor: theme.primary, color: 'white', padding: 20
+            backgroundColor: theme.primary, color: 'white', padding: 20,
+            boxShadow: '0 8px 10px rgba(215, 41, 201, 0.67)'
         }}>
             <Container>
                 <Navbar.Brand style={{color: theme.textColor.light}} as={Link} to="/">Saviane</Navbar.Brand>
