@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MyNavbar from './components/navbar';
+import { Container } from 'react-bootstrap';
+import { theme } from './pallet';
 
 function App() {
   return (
@@ -14,6 +16,12 @@ function App() {
           </Routes>
         </main>
       </div>
+
+      <footer className="footer text-light theme-navbar site-footer mt-auto py-3" style={{backgroundColor: theme.primaryDark}}>
+        <Container>
+          &copy; 2025 — Rifa solidária para Saviane — desenvolvido por Andrey Costa de Queiroz — queirozandrey5@gmail.com
+        </Container>
+      </footer>
     </BrowserRouter>
   );
 }
