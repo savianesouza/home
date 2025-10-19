@@ -5,6 +5,8 @@ import { type Rifa, fetchRifas } from '../../../services/api';
 import RifaCard from './RifaCard';
 import PaginationRifas from './PaginationRifas';
 import { useSelectedRifas } from '../../../customHooks/SelectedRifasContext';
+import Contador from './Contador';
+import Dialog from './Dialogo';
 
 const GridRifas = () => {
     const [rifas, setRifas] = useState<Rifa[]>([]);
@@ -32,26 +34,7 @@ const GridRifas = () => {
                 onPageChange={(page) => setPage(page)}
             />
 
-            <Row className="mb-2" style={{ color: theme.textColor.light }}>
-                <Col>
-                    <div className="d-flex justify-content-between align-items-center">
-                        <h3 style={{ color: theme.textColor.light }}>Rifas disponíveis</h3>
-                        <div>
-                            <span className="me-3">
-                                Selecionadas: <span id="selected-count">{selectedCount}</span>
-                            </span>
-                            <Button
-                                id="concluir-btn"
-                                variant="primary"
-                                disabled={selectedCount === 0}
-                                onClick={() => setShowModal(true)}
-                            >
-                                Comprar
-                            </Button>
-                        </div>
-                    </div>
-                </Col>
-            </Row>
+            <Contador onClick={()=> setShowModal(true)}/>
 
             <Row id="rifas-list" className="g-3">
                 {rifas.map((r) => (
@@ -59,20 +42,8 @@ const GridRifas = () => {
                 ))}
             </Row>
 
-            <Modal show={showModal} onHide={() => setShowModal(false)} id="pixModal">
-                <Modal.Header closeButton>
-                    <Modal.Title>Pagamento via Pix</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    {/* Conteúdo do modal */}
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={() => setShowModal(false)}>
-                        Fechar
-                    </Button>
-                    <Button variant="primary">Confirmar</Button>
-                </Modal.Footer>
-            </Modal>
+            <Dialog showModal={showModal} onHide={() => setShowModal(false)} onClose={() => setShowModal(false)}/>
+
         </Container>
     );
 };
