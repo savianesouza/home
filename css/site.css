@@ -1,0 +1,200 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem rgba(255,255,255,0.9), 0 0 0 0.25rem rgba(155,93,229,0.45);
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  /* Theme variables */
+  --theme-violet: #6a0dad;
+  --theme-purple: #9b5de5;
+  --theme-pink: #ff6fbf;
+  --theme-accent: #c77dff;
+  --text-color: #6a0dad;
+  color: var(--text-color);
+  background: #ff93ce;
+}
+
+h1, h2, h3, h4, h5, h6, p, div {
+  color: var(--text-color);
+}
+
+/* General typography */
+body, .container, .navbar, .card, .modal-content {
+  color:white;
+}
+
+/* Links */
+a, a:link, a:visited {
+  color: #ffffff;
+  text-decoration: underline dotted rgba(255,255,255,0.35);
+}
+a:hover, a:focus {
+  color: var(--theme-pink);
+  text-decoration: underline;
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(90deg, rgba(0,0,0,0.18), rgba(0,0,0,0.08));
+}
+.navbar .navbar-brand, .navbar .nav-link {
+  color: white !important;
+}
+
+/* Theme-specific navbar overrides to counter Bootstrap defaults like .bg-white and .navbar-light */
+.theme-navbar {
+  background: linear-gradient(90deg, rgba(106,13,173,0.95), rgba(155,93,229,0.9));
+}
+.theme-navbar, .theme-navbar .navbar-nav, .theme-navbar .container-fluid {
+  color: white !important;
+}
+.theme-navbar .nav-link, .theme-navbar .navbar-brand, .theme-navbar .navbar-text {
+  color: white !important;
+}
+.theme-navbar .nav-link.text-dark { /* replace any explicit text-dark classes */
+  color: white !important;
+}
+.bg-white.theme-navbar, .navbar-light.theme-navbar {
+  background: linear-gradient(90deg, rgba(106,13,173,0.95), rgba(155,93,229,0.9)) !important;
+}
+.theme-navbar .navbar-toggler {
+  border-color: rgba(255,255,255,0.12) !important;
+}
+.theme-navbar .navbar-toggler-icon {
+  filter: invert(1) brightness(2) saturate(0.2);
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(90deg, var(--theme-violet), var(--theme-purple));
+  border: none;
+  color: white;
+}
+.btn-primary:hover, .btn-primary:focus {
+  background: linear-gradient(90deg, var(--theme-purple), var(--theme-pink));
+  box-shadow: 0 6px 18px rgba(155,93,229,0.25);
+}
+.btn-outline-primary {
+  color: var(--theme-violet);
+  border-color: rgba(255,255,255,0.25);
+}
+.btn-outline-primary:hover {
+  background: rgba(255,255,255,0.06);
+  color: var(--theme-purple);
+}
+
+/* Cards and panels */
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+}
+.card-header {
+  background: transparent;
+  color: white;
+}
+
+.card-body, .card-text, label, .card-title {
+  color: white;
+}
+
+/* Remove thin white borders between navbar/content/footer introduced by Bootstrap utilities */
+.box-shadow, .border-bottom, .border-top {
+  border: none !important;
+}
+
+/* Add subtle shadows instead of hard white lines */
+.theme-navbar {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+.site-footer {
+  box-shadow: 0 -6px 18px rgba(0,0,0,0.28);
+}
+
+/* Ensure main container has spacing to reveal shadows */
+.container > main {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Reservations: convert table view into cards for visual consistency with Home */
+.reservations-list .reservation-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.reservations-list .reservation-meta {
+  color: var(--text-color);
+}
+
+/* Table fallback: make table rows transparent and text white */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(255,255,255,0.01);
+}
+.table thead th {
+  background: transparent;
+}
+
+/* Tables */
+.table thead th {
+  color: var(--text-color);
+}
+.table tbody td {
+  color: var(--text-color);
+}
+
+/* Forms */
+.form-control {
+  background: rgba(255,255,255,0.03);
+  color: var(--text-color);
+}
+.form-control::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+/* Modal styling */
+.modal-content {
+  background-color: white;
+  border: 1px solid rgba(255,255,255,0.04);
+  color: var(--text-color);
+}
+
+.modal-content label{
+  color: var(--text-color)
+}
+
+/* Footer */
+footer {
+  color: rgba(255,255,255,0.9);
+}
+
+/* Utility: subtle separators */
+.muted-sep {
+  border-top: 1px solid rgba(255,255,255,0.03);
+}
+
+/* Ensure disabled items remain legible */
+.text-muted, .disabled {
+  color: rgba(135, 56, 180, 0.6) !important;
+}
+
+/* Accessibility: focus outlines for keyboard users */
+:focus {
+  outline: 3px solid rgba(155,93,229,0.18);
+  outline-offset: 2px;
+}
