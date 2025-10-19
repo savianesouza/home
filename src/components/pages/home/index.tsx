@@ -2,6 +2,7 @@ import { Container, Row, Col, Card, Image } from 'react-bootstrap';
 import foto from '../../../assets/saviane.jpeg';
 import { theme } from '../../../pallet';
 
+
 const Home = () => {
     return (
         <Container>

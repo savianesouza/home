@@ -1,6 +1,7 @@
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { theme } from '../../pallet';
+import "./index.css"
 
 function MyNavbar() {
     return (
@@ -10,7 +11,7 @@ function MyNavbar() {
         }}>
             <Container>
                 <Navbar.Brand style={{color: theme.textColor.light}} as={Link} to="/">Saviane</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Toggle aria-controls="basic-navbar-nav" style={{borderColor: theme.textColor.light}}/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link style={{color: theme.textColor.light}}  as={Link} to="/">Home</Nav.Link>
