@@ -5,10 +5,9 @@ import { theme } from '../../../pallet';
 
 const Header = () => {
     return (
-        <Container>
-            <Row className="mb-4">
-                <Col>
-                    <Card className="shadow-sm">
+        <Container >
+            <Row className="mb-4" >
+                <Col style={{padding: 5, margin: 5}}>
                         <Row className="g-0" style={{ backgroundColor: theme.secondary, borderRadius: '.25rem', color: theme.textColor.light }}>
                             <Col md={4} className="d-flex align-items-center justify-content-center p-3">
                                 <Image
@@ -36,7 +35,6 @@ const Header = () => {
                                 </Card.Body>
                             </Col>
                         </Row>
-                    </Card>
                 </Col>
             </Row>
         </Container>

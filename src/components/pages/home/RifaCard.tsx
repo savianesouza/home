@@ -51,6 +51,7 @@ const RifaCard = ({ rifa }: { rifa: Rifa }) => {
                 style={{
                     color: theme.textColor.light,
                     border: 'none',
+                    backgroundColor: "transparent"
                 }}
             >
                 <Card.Body

@@ -1,6 +1,6 @@
 // src/services/api.ts
 
-export const API_BASE_URL = 'http://saviane.ddns.net';
+export const API_BASE_URL = 'https://saviane.ddns.net';
 
 export interface Rifa {
     id: number;

@@ -1,10 +1,10 @@
-import { Col, Container, Row, Button, Modal } from 'react-bootstrap';
+import { Container, Row} from 'react-bootstrap';
 import { useState, useEffect } from 'react';
-import { theme } from '../../../pallet';
+
 import { type Rifa, fetchRifas } from '../../../services/api';
 import RifaCard from './RifaCard';
 import PaginationRifas from './PaginationRifas';
-import { useSelectedRifas } from '../../../customHooks/SelectedRifasContext';
+
 import Contador from './Contador';
 import Dialog from './Dialogo';
 
@@ -15,7 +15,6 @@ const GridRifas = () => {
     const pageSize = 50;
     const [showModal, setShowModal] = useState(false);
 
-    const { selectedCount } = useSelectedRifas();
 
     useEffect(() => {
         fetchRifas(page, pageSize).then((data) => {
